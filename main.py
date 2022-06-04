@@ -8,8 +8,8 @@ app = FastAPI()
 
 
 @app.get("/", response_class=HTMLResponse)
-async def helloworld_handler() -> str:
-    return 'Hello, world!'
+async def helloworld_handler(name: str = 'world') -> str:
+    return f'Hello, {name}!'
 
 
 def main() -> None:
